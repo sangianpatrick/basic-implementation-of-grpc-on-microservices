@@ -1,1 +1,6 @@
-/.sonarlint
+**/.sonarlint
+**/node_modules
+**/.env
+**/.vscode
+**/__pycache__
+**/venv
