@@ -11,6 +11,24 @@ const getProfile = async (req, res, next) => {
     });
 }
 
+const getUserList = async (req, res, next) => {
+  try {
+    const start = Math.floor(new Date())
+    const userList = await User.findAll();
+    const end = Math.floor(new Date()) - start
+    const data = {
+      ...userList,
+      executionTime: end + 'ms'
+    }
+    res.status(200)
+      .json(data);
+  } catch (err) {
+    res.status(200)
+      .json(err);
+  }
+}
+
 module.exports = {
-  getProfile
+  getProfile,
+  getUserList
 }

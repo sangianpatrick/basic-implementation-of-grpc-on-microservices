@@ -10,7 +10,6 @@ import user_pb2_grpc
 # import user model
 from user_model import User
 
-
 class UserService(user_pb2_grpc.UserServiceServicer):
     def GetUserList(self, req, ctx):
         user_list = []

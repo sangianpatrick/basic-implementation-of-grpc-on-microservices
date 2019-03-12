@@ -22,7 +22,8 @@ server.get('/', (_, res) => {
 });
 
 // user service
-server.get('/user/:userId', user.getProfile);
+server.get('/users/:userId', user.getProfile);
+server.get('/users', user.getUserList);
 
 // not found handler
 server.use('*', (req, res) => {
